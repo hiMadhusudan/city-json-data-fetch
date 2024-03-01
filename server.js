@@ -1,9 +1,13 @@
 const express = require('express');
 const path = require('path');
 const fetch = require('node-fetch');
+const cors = require('cors'); // Import the cors middleware
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Use the cors middleware
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
